@@ -10,7 +10,7 @@ include_once "vendor/easyrdf/easyrdf/EasyRdf.php";
 <body>
 <?php
 // Use a local SPARQL 1.1 Graph Store (eg RedStore)
-$gs = new EasyRdf_GraphStore('http://fuseki:3030/dbpedia');
+$gs = new EasyRdf_GraphStore('http://fuseki:3030/runic-text');
 // Add the current time in a graph
 $graph1 = $gs->getDefault();
 $graph1->add('http://example.com/test', 'rdfs:label', 'Test');
