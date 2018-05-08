@@ -1,18 +1,24 @@
+#    - type: volume
+#      source: src
+#      target: /var/www/html
 version: '3'
 
 services:
   fuseki:
     image: "stain/jena-fuseki"
     ports:
-     - "3030:3030"
+     - 3030:3030
     volumes:
       - fuseki-data:/fuseki
     environment:
       - ADMIN_PASSWORD=gnugnu1234
-  runic-text:
-    build: runic-text
+  admin:
+    build: admin
     ports:
-     - "8080:80"
+    - 8080:80
+    volumes:
+    - ./admin/src:/var/www/html/
+    - ./admin/vendor:/var/www/html/vendor
 
 volumes:
   fuseki-data:
